@@ -1,0 +1,102 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin: 20px;
+    padding: 10px;
+    color: #99775C;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid #a38971cb;
+    border-radius: 15px;
+    width: fit-content;
+    color: #99775c;
+    font-size: larger;
+}
+
+h2 {
+    font-size: large;
+}
+
+.top-navbar {
+    position: relative;
+    z-index: 9999;
+    background: #c0b4a5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px #6a5d52;
+    width: 99%;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+.top-navbar .logo img {
+    width: 200px;
+    height: auto;
+    padding-right: 150px;
+}
+
+.top-navbar .logo:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+.top-navbar .list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.top-navbar .link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #eae8e5;
+    font-weight: 700;
+    margin-right: 80px;
+}
+
+.top-navbar .link::before,
+.top-navbar .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f2d2d2;
+    transform: scaleX(0);
+    transition: transform 0.25s;
+}
+
+.top-navbar .link::before {
+    top: -3px;
+    transform-origin: left;
+}
+
+.top-navbar .link::after {
+    bottom: -3px;
+    transform-origin: right;
+}
+
+.top-navbar .link:hover::before,
+.top-navbar .link:hover::after,
+.top-navbar .active::before,
+.top-navbar .active::after {
+    transform: scaleX(1);
+}
