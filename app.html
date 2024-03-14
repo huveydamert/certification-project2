@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <nav class="top-navbar">
+            <div class="content">
+              <div class="logo"> <img src="Screen Shot 2024-03-12 at 12.43.51 PM.png" alt="Logo"></div>
+              <ul class="list">
+                <li class="has-submenu">
+                  <a href="home.html" class="link">Home</a>
+                  <a href="app.html" class="link">App</a>
+                  <a href="contact.html" class="link">Contact</a>
+                  </ul>
+            </div>
+          </nav>  
+    </header>
+
+        <h2>Quote Generator</h2>
+    <div id="randomQuoteDisplay"></div>
+    <div id="app">
+        <button id="randomQuoteButton" onclick="displayRandomQuote()">Show Random Quote</button>
+    </div>
+
+    <div id="quoteListSection">
+        <h2>Quote Lists</h2>
+        <select id="quoteListSelector" onchange="changeCurrentList(this.value)"></select>
+        <div id="quotesDisplay"></div>
+        <button class="listButton" onclick="createNewQuoteList()">Create New List</button>
+        <button class="listButton" onclick="deleteCurrentQuoteList()">Delete Current List</button>
+    </div>
+
+    <div id="addQuoteSection">
+        <h2>Add Quote</h2>
+        <input type="text" id="newQuoteText" placeholder="Quote">
+        <input type="text" id="newQuoteAuthor" placeholder="Author">
+        <select id="newQuoteCategory">
+            <option value="Motivation">Motivation</option>
+            <option value="Humor">Humor</option>
+            <option value="Wisdom">Wisdom</option>
+        </select>
+        <button onclick="addQuote()" id="addUpdateBtn">Add Quote</button>
+    </div>
+
+    <div id="localStorageButtons">
+        <button onclick="saveToLocalStorage()">Save to Local Storage</button>
+        <button onclick="loadFromLocalStorage()">Load from Local Storage</button>
+    </div>
+
+    <a href="home.html" class="back-arrow">&larr; Back to Main Page</a>
+
+    <script src="app.js"></script>
+</body>
+</html>
