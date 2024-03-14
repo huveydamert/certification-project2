@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="contact.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <header>
+         <div>
+            <nav class="top-navbar">
+                <div class="content">
+                  <div class="logo"> <img src="Screen Shot 2024-03-12 at 12.43.51 PM.png" alt="Logo"></div>
+                  <ul class="list">
+                    <li class="has-submenu">
+                      <a href="home.html" class="link">Home</a>
+                      <a href="app.html" class="link">App</a>
+                      <a href="contact.html" class="link">Contact</a>
+                      </ul>
+                </div>
+              </nav>  
+         </div>
+        </div>
+      </header>
+    <main>
+      <div id="about-section">
+        <h2>About Us</h2>
+        <p>
+            We love hearing from our users! Whether you have a question, feedback, or just want to share your favorite quote with us, don't hesitate to reach out. Our team is dedicated to making Quote Generator the best place for inspiring, funny, and wise quotes on the internet, and your input is invaluable to us.
+        </p>
+      </div>
+      <div id="contact-form">
+        <h2>Contact Us</h2>
+        <form id="form">
+          <label for="contactType">Select the reason for your contact:</label>
+          <select id="contactType" name="contactType">
+            <option value="feedback">Feedback and Suggestions</option>
+            <option value="collaboration">Request for Collaboration or Partnership</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="name">Your Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            pattern="[A-Za-z ]+"
+            required
+          />
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+        <div id="thank-you" style="display: none">
+          <p>
+            Thank you, <span id="user-name"></span>! Your request has been
+            received.
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="contact.js"></script>
+  </body>
+</html>
