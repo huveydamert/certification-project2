@@ -24,6 +24,7 @@ let quoteLists = {
         quoteLists[listName] = [];
         currentList = listName;
         updateListSelector();
+        updateAddQuoteSelector();
         updateQuotesDisplay();
     }
   }
@@ -33,6 +34,7 @@ let quoteLists = {
         delete quoteLists[currentList];
         currentList = Object.keys(quoteLists)[0] || '';
         updateListSelector();
+        updateAddQuoteSelector();
         updateQuotesDisplay();
     }
   }
@@ -77,6 +79,18 @@ let quoteLists = {
     }
   }
   
+  function updateAddQuoteSelector() {
+    const selector = document.getElementById('newQuoteCategory');
+    selector.innerHTML = '';
+    for (let listName in quoteLists) {
+        const option = document.createElement('option');
+        option.value = listName;
+        option.textContent = listName;
+        option.selected = listName === currentList;
+        selector.appendChild(option);
+    }
+  }
+
   //Assisted by ChatGPT for guidance
   function updateQuotesDisplay() {
     const display = document.getElementById('quotesDisplay');
@@ -175,5 +189,6 @@ let quoteLists = {
   
   // Initial setup
   updateListSelector();
+  updateAddQuoteSelector();
   updateQuotesDisplay();
   
